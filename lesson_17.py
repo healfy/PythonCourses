@@ -9,9 +9,9 @@ height = int((float(image1.size[1]) * float(ratio)))
 new = image1.resize((width, height))
 new.show()
 
-# print(image1.format, image1.size, image1.mode)
-# image1.thumbnail((750, 750))
-# # print(image1.size)
+print(image1.format, image1.size, image1.mode)
+image1.thumbnail((750, 750))
+# print(image1.size)
 # #new_image = image1.resize((300, 300))
 # region = image1.crop((0, 25, 200, 100)) #x1, y1, x2 , y2
 # # region = region.transpose(Image.ROTATE_180)
