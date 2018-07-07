@@ -12,8 +12,7 @@ class HomeApp(QtWidgets.QMainWindow, werded.Ui_Form):
         super().__init__()
         self.setupUi(self)
 
-        self.pushButton.clicked.connect(self.convert_button(
-            self.image, self.lineEdit, self.lineEdit_2, self.checkBox))
+        self.pushButton.clicked.connect(self.convert_button)
         self.findButton.clicked.connect(self.show_dialog)
         self.show()
 
@@ -27,35 +26,34 @@ class HomeApp(QtWidgets.QMainWindow, werded.Ui_Form):
             event.ignore()
 
     def show_dialog(self):
+
         fname = QFileDialog.getOpenFileName(
-            self, 'Open file', 'C:/tms/QT/')[0]
-        image = Image.open(fname)
-        self.image = image
+            self, 'Open file', 'C:/Users/Mitrandir/PycharmProjects/QT/')[0]
 
-    @staticmethod
-    def convert_button(image, width, height, checkbox):
+        self.image = Image.open(fname)
 
-        if not height.text():
-            width = int(width.text())
-            ratio = width / image.size[0]
-            height = int((float(image.size[1]) * float(ratio)))
-            new_image = image.resize((width, height))
+    def convert_button(self):
+        if not self.lineEdit_2.text():
+            width = int(self.lineEdit.text())
+            ratio = width / self.image.size[0]
+            height = int((float(self.image.size[1]) * float(ratio)))
+            new_image = self.image.resize((width, height))
             new_image.show()
-            if checkbox.isChecked():
+            if self.checkBox.isChecked():
                 new_image.save('new_image.jpg')
-        elif not width.text():
-            height = int(height.text())
-            ratio = height / image.size[1]
-            width = int((float(image.size[0]) * float(ratio)))
-            new_image = image.resize((width, height))
+        elif not self.lineEdit.text():
+            height = int(self.lineEdit_2.text())
+            ratio = height / self.image.size[1]
+            width = int((float(self.image.size[0]) * float(ratio)))
+            new_image = self.image.resize((width, height))
             new_image.show()
-            if checkbox.isChecked():
+            if self.checkBox.isChecked():
                 new_image.save('new_image.jpg')
-        elif width.text() and height.text():
-            new_image = image.resize((
-                int(width.text()), int(height.text())))
+        elif self.lineEdit.text() and self.lineEdit_2.text():
+            new_image = self.image.resize((
+                int(self.lineEdit.text()), int(self.lineEdit_2.text())))
             new_image.show()
-            if checkbox.isChecked():
+            if self.checkBox.isChecked():
                 new_image.save('new_image.jpg')
 
 
