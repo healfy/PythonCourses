@@ -26,35 +26,43 @@ class HomeApp(QtWidgets.QMainWindow, werded.Ui_Form):
             event.ignore()
 
     def show_dialog(self):
-
         fname = QFileDialog.getOpenFileName(
             self, 'Open file', 'C:/Users/Mitrandir/PycharmProjects/QT/')[0]
 
         self.image = Image.open(fname)
 
     def convert_button(self):
-        if not self.lineEdit_2.text():
-            width = int(self.lineEdit.text())
-            ratio = width / self.image.size[0]
-            height = int((float(self.image.size[1]) * float(ratio)))
-            new_image = self.image.resize((width, height))
-            new_image.show()
-            if self.checkBox.isChecked():
-                new_image.save('new_image.jpg')
-        elif not self.lineEdit.text():
-            height = int(self.lineEdit_2.text())
-            ratio = height / self.image.size[1]
-            width = int((float(self.image.size[0]) * float(ratio)))
-            new_image = self.image.resize((width, height))
-            new_image.show()
-            if self.checkBox.isChecked():
-                new_image.save('new_image.jpg')
-        elif self.lineEdit.text() and self.lineEdit_2.text():
-            new_image = self.image.resize((
-                int(self.lineEdit.text()), int(self.lineEdit_2.text())))
-            new_image.show()
-            if self.checkBox.isChecked():
-                new_image.save('new_image.jpg')
+        result = self.convert_image(self.image,
+                                    int(self.lineEdit.text()),
+                                    int(self.lineEdit_2.text()))
+        if result == ValueError:
+            reply = QMessageBox.warning(self, 'Message',
+                                        'Введите ширину или высоту',
+                                        QMessageBox.Ok, QMessageBox.No)
+            if reply == QMessageBox.Ok:
+                pass
+        else:
+            result.show()
+        self.result = result
+
+    @staticmethod
+    def convert_image(image, width, height):
+        if not height:
+            ratio = width / image.size[0]
+            height1 = int((float(image.size[1]) * float(ratio)))
+            new_image = image.resize((width, height1))
+            return new_image
+        elif not width:
+            ratio = height / image.size[1]
+            width1 = int((float(image.size[0]) * float(ratio)))
+            new_image = image.resize((width1, height))
+            return new_image
+        elif width and height:
+            new_image = image.resize((width, height))
+            return new_image
+        elif not width and not height:
+            new_image = ValueError
+            return new_image
 
 
 def main():
