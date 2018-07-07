@@ -25,4 +25,3 @@
 # print(pixels[0, 0])
 # pixels[0, 0] = (255, 0, 0)
 # image2.show()
-
