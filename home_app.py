@@ -31,38 +31,40 @@ class HomeApp(QtWidgets.QMainWindow, werded.Ui_Form):
 
         self.image = Image.open(fname)
 
-    def convert_button(self):
+    def convert_button(self, event):
         result = self.convert_image(self.image,
-                                    int(self.lineEdit.text()),
-                                    int(self.lineEdit_2.text()))
+                                    self.lineEdit.text(),
+                                    self.lineEdit_2.text())
+
         if result == ValueError:
             reply = QMessageBox.warning(self, 'Message',
                                         'Введите ширину или высоту',
                                         QMessageBox.Ok, QMessageBox.No)
             if reply == QMessageBox.Ok:
                 pass
+            else:
+                event.ignore()
         else:
             result.show()
         self.result = result
 
     @staticmethod
     def convert_image(image, width, height):
-        if not height:
-            ratio = width / image.size[0]
+        if not height and width:
+            ratio = int(width) / image.size[0]
             height1 = int((float(image.size[1]) * float(ratio)))
-            new_image = image.resize((width, height1))
+            new_image = image.resize((int(width), height1))
             return new_image
-        elif not width:
-            ratio = height / image.size[1]
+        elif not width and height:
+            ratio = int(height) / image.size[1]
             width1 = int((float(image.size[0]) * float(ratio)))
-            new_image = image.resize((width1, height))
+            new_image = image.resize((width1, int(height)))
             return new_image
         elif width and height:
-            new_image = image.resize((width, height))
+            new_image = image.resize((int(width), int(height)))
             return new_image
         elif not width and not height:
-            new_image = ValueError
-            return new_image
+            return ValueError
 
 
 def main():
