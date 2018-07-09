@@ -11,7 +11,7 @@ class MyThread(Thread):
         """Инициализация потока"""
         super(MyThread, self).__init__()
         self.name = name
-#         self.max_int = max_int
+        self.max_int = max_int
 
 #     def run(self):
 #         """Запуск потока"""

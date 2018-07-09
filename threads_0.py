@@ -2,18 +2,18 @@ import threading
 from time import sleep
 
 
-# def writer(x):
-#
-#     with lock:
-#         for i in range(5):
-#             print('Поток {} {}'.format(x, i))
-#             sleep(0.25)
 def writer(x):
 
-    with semaphore:
+    with lock:
         for i in range(5):
             print('Поток {} {}'.format(x, i))
             sleep(0.25)
+# def writer(x):
+#
+#     with semaphore:
+#         for i in range(5):
+#             print('Поток {} {}'.format(x, i))
+#             sleep(0.25)
 
 
 semaphore = threading.Semaphore(2)
