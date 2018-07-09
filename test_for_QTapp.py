@@ -35,7 +35,5 @@ class TestMyCode(unittest.TestCase):
         self.assertEqual(new_image3.size, result3.size)
         width4 = None
         height4 = None
-        result4 = home_app.HomeApp.convert_image(image, width4, height4)
-        self.assertRaises(ValueError)
-
-
+        with self.assertRaises(ValueError):
+            home_app.HomeApp.convert_image(image, width4, height4)
