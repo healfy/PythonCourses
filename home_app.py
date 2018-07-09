@@ -32,11 +32,14 @@ class HomeApp(QtWidgets.QMainWindow, werded.Ui_Form):
         self.image = Image.open(fname)
 
     def convert_button(self, event):
-        result = self.convert_image(self.image,
-                                    self.lineEdit.text(),
-                                    self.lineEdit_2.text())
+        try:
+            result = self.convert_image(self.image,
+                                        self.lineEdit.text(),
+                                        self.lineEdit_2.text())
+            result.show()
+            self.result = result
 
-        if result == ValueError:
+        except ValueError:
             reply = QMessageBox.warning(self, 'Message',
                                         'Введите ширину или высоту',
                                         QMessageBox.Ok, QMessageBox.No)
@@ -44,9 +47,6 @@ class HomeApp(QtWidgets.QMainWindow, werded.Ui_Form):
                 pass
             else:
                 event.ignore()
-        else:
-            result.show()
-        self.result = result
 
     @staticmethod
     def convert_image(image, width, height):
@@ -64,7 +64,7 @@ class HomeApp(QtWidgets.QMainWindow, werded.Ui_Form):
             new_image = image.resize((int(width), int(height)))
             return new_image
         elif not width and not height:
-            return ValueError
+            raise ValueError
 
 
 def main():

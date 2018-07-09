@@ -36,6 +36,6 @@ class TestMyCode(unittest.TestCase):
         width4 = None
         height4 = None
         result4 = home_app.HomeApp.convert_image(image, width4, height4)
-        self.assertEqual(ValueError, result4)
+        self.assertRaises(ValueError)
 
 
