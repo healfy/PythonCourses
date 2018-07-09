@@ -10,9 +10,9 @@ def writer(x, event_for_wait, event_for_set):
 
 
 # init events
-e1 = threading.Event()
-e2 = threading.Event()
-e3 = threading.Event()
+# e1 = threading.Event()
+# e2 = threading.Event()
+# e3 = threading.Event()
 
 # init threads
 t1 = threading.Thread(target=writer, args=(0, e1, e2))
