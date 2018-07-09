@@ -11,13 +11,13 @@ class MyThread(Thread):
         """Инициализация потока"""
         super(MyThread, self).__init__()
         self.name = name
-        self.max_int = max_int
+#         self.max_int = max_int
 
-    def run(self):
-        """Запуск потока"""
-        for i in range(self.max_int):
-            print('{}: {}'.format(self.name, i))
-            sleep(0.5)
+#     def run(self):
+#         """Запуск потока"""
+#         for i in range(self.max_int):
+#             print('{}: {}'.format(self.name, i))
+#             sleep(0.5)
 
 
 def create_threads():
