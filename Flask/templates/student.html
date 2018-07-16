@@ -1,0 +1,13 @@
+<title>{% block title %}{% endblock %}</title>
+<table border="1">
+    <tr>
+        <td>Имя</td>
+        <td>Оценка</td>
+    </tr>
+{% for name, mark in students.items() %}
+    <tr>
+        <td>{{ name }}</td>
+        <td style="text-align: center">{{ mark }}</td>
+    </tr>
+{% endfor %}
+</table>

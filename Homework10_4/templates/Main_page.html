@@ -1,0 +1,17 @@
+<title>{% block title %}{% endblock %}</title>
+<table border="1", style="text-align: center" >
+    <tr>
+        <td>Название</td>
+        <td>Адрес</td>
+        <td>Кол-во сотрудников</td>
+    </tr>
+    {% for i in shops %}
+    <tr>
+        <td> <a href="/shop/{{i.id}}/">{{i.name}}</a> </td>
+        <td>{{ i.address }}</td>
+        <td>{{ i.staff_amount }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+

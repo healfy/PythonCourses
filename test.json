@@ -1,0 +1,109 @@
+{
+    "Files": {
+        "AlbumArtSmall.jpg": {
+            "SIZE": 5502,
+            "FORMAT": "jpg"
+        },
+        "AlbumArt_{2858F567-9FB5-430F-B35A-4607AB49466D}_Large.jpg": {
+            "SIZE": 31826,
+            "FORMAT": "jpg"
+        },
+        "AlbumArt_{2858F567-9FB5-430F-B35A-4607AB49466D}_Small.jpg": {
+            "SIZE": 5502,
+            "FORMAT": "jpg"
+        },
+        "AsusIntelIncredible.themepack": {
+            "SIZE": 6120297,
+            "FORMAT": "themepack"
+        },
+        "desktop.ini": {
+            "SIZE": 282,
+            "FORMAT": "ini"
+        },
+        "FlopzillaInstall.msi": {
+            "SIZE": 28937216,
+            "FORMAT": "msi"
+        },
+        "Folder.jpg": {
+            "SIZE": 31826,
+            "FORMAT": "jpg"
+        },
+        "Installer_GGPoker_en.msi": {
+            "SIZE": 1454080,
+            "FORMAT": "msi"
+        },
+        "install_TAL-Reverb-2.zip": {
+            "SIZE": 32489498,
+            "FORMAT": "zip"
+        },
+        "Melee Map Contest Cup.rar": {
+            "SIZE": 1669831,
+            "FORMAT": "rar"
+        },
+        "NASASpacescapes.themepack": {
+            "SIZE": 5471529,
+            "FORMAT": "themepack"
+        },
+        "OBS-Studio-20.1.3-Full-Installer.exe": {
+            "SIZE": 102779800,
+            "FORMAT": "exe"
+        },
+        "OrjanNilsen_-_Amsterdam__DJVannie_20120423181102.mid": {
+            "SIZE": 1141,
+            "FORMAT": "mid"
+        },
+        "Risen 3 Titan Lords - Enhanced Edition [2015, RUS, Repack] xatab [Seedoff.tv].torrent": {
+            "SIZE": 11362,
+            "FORMAT": "torrent"
+        },
+        "S.T.A.L.K.E.R. Shadow of Chernobyl - ОП-2   dsh mod [2017, RUS, Repack] by SeregA-Lus [Seedoff.tv].torrent": {
+            "SIZE": 16173,
+            "FORMAT": "torrent"
+        },
+        "TeamSpeak3-Client-win64-3.1.6.exe": {
+            "SIZE": 78071056,
+            "FORMAT": "exe"
+        },
+        "VideoEditor.exe": {
+            "SIZE": 89886864,
+            "FORMAT": "exe"
+        },
+        "Warcraft-III-Public-Test-Setup.exe": {
+            "SIZE": 3383280,
+            "FORMAT": "exe"
+        },
+        "werded.txt": {
+            "SIZE": 44,
+            "FORMAT": "txt",
+            "LENGTH": 31
+        },
+        "install_virtualdj_pc_v8.2.3994.msi": {
+            "SIZE": 39608320,
+            "FORMAT": "msi"
+        },
+        "Roman Zavadski  Who.I.AM - Autumn evenings (promodj.com).mp3": {
+            "SIZE": 18611792,
+            "FORMAT": "mp3"
+        },
+        "homework2_6.py": {
+            "SIZE": 2599,
+            "FORMAT": "py"
+        },
+        "homework8_4.py": {
+            "SIZE": 7473,
+            "FORMAT": "py"
+        },
+        "lesson8.py": {
+            "SIZE": 1966,
+            "FORMAT": "py"
+        },
+        "lesson9.py": {
+            "SIZE": 182,
+            "FORMAT": "py"
+        },
+        "way_out_west_surrender_eelke_kleijn_remix_(NaitiMP3.ru).mp3": {
+            "SIZE": 17678627,
+            "FORMAT": "mp3"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<title>{% block title %}{% endblock %}</title>
+{% for department, items in department.items() %}
+    <h3> {{ department.sphere }} </h3>
+        <table border="1">
+            <tr>
+                <td>Название</td>
+                <td>Описание</td>
+                <td>Цена</td>
+                </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+{% endfor %}
+<p><a href="/shop/{{shop_id}}/add/">Добавить товар</a></p>
